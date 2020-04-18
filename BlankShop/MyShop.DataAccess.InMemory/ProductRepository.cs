@@ -7,7 +7,7 @@ using System.Runtime.Caching;
 using MyShop.Core.Models;
 
 namespace MyShop.DataAccess.InMemory {
-    class ProductRepository {
+    public class ProductRepository {
         ObjectCache objectCache = MemoryCache.Default;
         List<Product> products;
         public ProductRepository() {
@@ -41,7 +41,7 @@ namespace MyShop.DataAccess.InMemory {
                 throw new Exception("Product not found");
             }
         }
-        public IQueryable<Product> Collections() { 
+        public IQueryable<Product> Collection() { 
             return products.AsQueryable();
         }
         public void Delete(string Id) {
